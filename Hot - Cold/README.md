@@ -17,6 +17,11 @@ Assets was taken from:
 
    Medieval Room - https://assetstore.unity.com/packages/3d/environments/free-medieval-room-131004
    
+
+* player and animated character:
+ 
+  Mixamo - https://www.mixamo.com/#/?page=1&type=Character
+
 * Audio - YouTube:
   
   Dead Space Audio - PA Whispers - https://www.youtube.com/watch?v=m2ZI2ACd5XQ
