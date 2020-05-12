@@ -26,7 +26,7 @@ public class PlayerController : MonoBehaviour
         transform.Translate(0, 0, translation);
         transform.Rotate(0, rotation, 0);
 
-        if (Input.GetKeyDown(KeyCode.LeftArrow) || Input.GetKeyDown(KeyCode.RightArrow) || Input.GetKeyDown(KeyCode.DownArrow) || Input.GetKeyDown(KeyCode.UpArrow))
+        if (Input.GetKey(KeyCode.LeftArrow) || Input.GetKey(KeyCode.RightArrow) || Input.GetKey(KeyCode.DownArrow) || Input.GetKey(KeyCode.UpArrow))
         {
             StartCoroutine(GoToWalkMode());
             
@@ -38,9 +38,11 @@ public class PlayerController : MonoBehaviour
         animator.SetBool("stand", false);
         animator.SetBool("walking", true);
         yield return new WaitForSeconds(duration);
-        animator.SetBool("walking", false);
-        animator.SetBool("stand", true);
-        
+        if (!Input.GetKey(KeyCode.LeftArrow) && !Input.GetKey(KeyCode.RightArrow) && !Input.GetKey(KeyCode.DownArrow) && !Input.GetKey(KeyCode.UpArrow))
+        {
+            animator.SetBool("walking", false);
+            animator.SetBool("stand", true);
+        }
     }
 
 
